@@ -1,0 +1,10 @@
+= Install =
+Ruby 1.9.3
+gem install active_support business_time
+
+= Usage =
+irb -r .\business_day_calculator.rb
+
+```ruby
+BusinessDayCalculator::Client.new(Time.now(), 8).CalculateDueDate
+```
