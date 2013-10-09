@@ -2,19 +2,21 @@ module BusinessHourCalculator
     class Client
     	include TimeFormat
 
-      attr_reader :submit_date, :turnaround
+      attr_reader :date, :estimate_hour
 
-    	def initialize(submit_date, turnaround)
-    		@submit_date = submit_date
-    		@turnaround = turnaround
+    	def initialize(estimate_hour, date)
+    		@date = date || Time.now()
+    		@estimate_hour = estimate_hour
     	end
 
-    	def CalculateDueDate
+    	def calculated_due_date
     		time_format(calculate_due_date)
     	end
 
+      private
+
     	def calculate_due_date
-    		turnaround.business_hour.after(submit_date)
+    		estimate_hour.business_hour.after(date)
     	end
     end
 end # BusinessHourCalculator
