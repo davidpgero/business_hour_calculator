@@ -1,4 +1,4 @@
-module BusinessDayCalculator
+module BusinessHourCalculator
 	class Config
 		def self.initialize!
 			BusinessTime::Config.beginning_of_workday = "9:00 am"
@@ -6,4 +6,4 @@ module BusinessDayCalculator
 			BusinessTime::Config.work_week = [:mon, :tue, :wed, :thu, :fri]
 		end
 	end
-end # BusinessDayCalculator
+end # BusinessHourCalculator

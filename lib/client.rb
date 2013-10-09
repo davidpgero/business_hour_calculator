@@ -1,6 +1,8 @@
-module BusinessDayCalculator
+module BusinessHourCalculator
     class Client
     	include TimeFormat
+
+      attr_reader :submit_date, :turnaround
 
     	def initialize(submit_date, turnaround)
     		@submit_date = submit_date
@@ -12,7 +14,7 @@ module BusinessDayCalculator
     	end
 
     	def calculate_due_date
-    		@turnaround.business_hour.after(@submit_date)
+    		turnaround.business_hour.after(submit_date)
     	end
     end
-end # BusinessDayCalculator
+end # BusinessHourCalculator
