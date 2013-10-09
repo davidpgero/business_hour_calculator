@@ -11,5 +11,8 @@ gem install active_support business_time
 irb -r .\business_hour_calculator.rb
 
 ```ruby
-BusinessHourCalculator::Client.new(Time.now(), 8).CalculateDueDate
+# without format
+BusinessHourCalculator::Client.new(8).calculate_due_date
+# with format
+BusinessHourCalculator::Client.new(8).calculated_due_date
 ```
