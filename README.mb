@@ -1,10 +1,15 @@
+= Function =
+Calculate when you will finish a task. 
+
+You estimate a task during and calculator get a date when you will be finished it. 
+
 = Install =
 Ruby 1.9.3
 gem install active_support business_time
 
 = Usage =
-irb -r .\business_day_calculator.rb
+irb -r .\business_hour_calculator.rb
 
 ```ruby
-BusinessDayCalculator::Client.new(Time.now(), 8).CalculateDueDate
+BusinessHourCalculator::Client.new(Time.now(), 8).CalculateDueDate
 ```
